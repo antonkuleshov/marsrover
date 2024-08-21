@@ -27,14 +27,15 @@ class MarsRover
             $stepValue = $this->getStepValue($step);
 
             if ($newSide === 'n') {
-                $state = [$coordinateX, $coordinateY + $stepValue, $newSide];
+                $coordinateY = $coordinateY + $stepValue;
             } elseif ($newSide === 's') {
-                $state = [$coordinateX, $coordinateY - $stepValue, $newSide];
-            } elseif ($newSide === 'w') {
-                $state = [$coordinateX - $stepValue, $coordinateY, $newSide];
+                $coordinateY = $coordinateY - $stepValue;
             } elseif ($newSide === 'e') {
-                $state = [$coordinateX + $stepValue, $coordinateY, $newSide];
+                $coordinateX = $coordinateX + $stepValue;
+            } elseif ($newSide === 'w') {
+                $coordinateX = $coordinateX - $stepValue;
             }
+            $state = [$coordinateX, $coordinateY, $newSide];
         }
         return $state;
     }
