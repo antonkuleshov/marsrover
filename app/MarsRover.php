@@ -72,14 +72,8 @@ class MarsRover
 
     }
 
-    public function getStepValue(int $walk)
+    public function getStepValue(int $walk): int
     {
-        if ($walk === 0) {
-            return 1;
-        } elseif ($walk === 3) {
-            return -1;
-        } elseif ($walk === 1 || $walk === 2) {
-            return 1;
-        }
+        return ($walk === 3) ? -1 : 1;
     }
 }
