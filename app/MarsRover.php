@@ -39,7 +39,7 @@ class MarsRover
         return $state;
     }
 
-    public function newSide(string $previousSide, int $walk)
+    public function newSide(string $previousSide, int $walk): string
     {
         if ($walk === 0 || $walk === 3) {
             return $previousSide;
@@ -48,7 +48,7 @@ class MarsRover
         }
     }
 
-    public function checkSide(string $previousSide, int $walk)
+    public function checkSide(string $previousSide, int $walk): string
     {
         $directionMap = [
             'n, 1' => 'e',
